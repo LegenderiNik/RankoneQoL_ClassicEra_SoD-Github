@@ -1,0 +1,23 @@
+## Interface: 11508
+## Title: RankoneQoL
+## Notes: Bequeme Quality-of-Life Funktionen für Classic.
+## Author: Legenderi_Nik
+## Version: 1.0
+## SavedVariables: RankoneQoL_DB
+## IconTexture: Interface\AddOns\RankoneQoL\logo
+
+Core\Localization.lua
+Core\UiMenuDesigns.lua
+Core\FontStorage.lua
+Core\Changelog.lua
+Core\Interface.lua
+Core\Tab_Automation.lua
+Core\Tab_Speedrun.lua
+Core\Tab_Themes.lua
+Core\Tab_Changelog.lua
+Core\Tab_Options.lua
+Core\MinimapButton.lua
+Modules\Automation.lua
+Modules\Speedrun.lua
+Modules\GlobalTooltipSkin.lua
+Core\RankoneQoL.lua
