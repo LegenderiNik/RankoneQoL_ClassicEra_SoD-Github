@@ -79,6 +79,13 @@ L["TT_SPEED_GOSSIP"] = "Automatically clicks the NPC dialog option if there is o
 L["TOOLTIP_SELL_VALUE"] = "Vendor Value:"
 L["TOOLTIP_STACK_VALUE"] = "Vendor Value (%d):"
 
+-- I) CHAT HELP COMMANDS (ENGLISCH)
+L["HELP_HEADER"] = "|cFF00C0FF[RankoneQoL] — Available Chat Commands:|r"
+L["HELP_CMD_MAIN"] = "  |cFFFFD100/rqol|r or |cFFFFD100/rankone|r — Opens the main configuration interface."
+L["HELP_CMD_HELP"] = "  |cFFFFD100/rqol help|r — Displays this visual command assistance directory."
+L["HELP_CMD_RESET"] = "  |cFFFFD100/rqol reset|r — |cFFFF2222Wipes current character database and restores factory defaults.|r"
+L["CHAT_RESET_SUCCESS"] = "|cFF00C0FF[RankoneQoL]|r |cFFFF2222Your character profile has been reset to factory defaults! Reloading UI...|r"
+
 -- ============================================================================
 -- [2. DEUTSCHE ÜBERSETZUNGEN] - Wird aktiv, wenn WoW auf Deutsch läuft (deDE)
 -- ============================================================================
@@ -137,9 +144,15 @@ if GetLocale() == "deDE" then
     L["TT_SPEED_HEARTH"] = "Überspringt das Blizzard-Bestätigungsfenster beim Binden eines neuen Heimatortes."
     L["TT_SPEED_GOSSIP"] = "Klickt die Dialogzeile des NPCs automatisch an, wenn es für dich nur eine einzige Option zur Auswahl gibt."
     
-    -- H) TOOLTIP PREIS-ANZEIGEN
     L["TOOLTIP_SELL_VALUE"] = "Händlerwert:"
     L["TOOLTIP_STACK_VALUE"] = "Händlerwert (%d):"
+
+    -- I) CHAT HELP COMMANDS (DEUTSCH)
+    L["HELP_HEADER"] = "|cFF00C0FF[RankoneQoL] — Verfügbare Chat-Befehle:|r"
+    L["HELP_CMD_MAIN"] = "  |cFFFFD100/rqol|r oder |cFFFFD100/rankone|r — Öffnet das Einstellungsmenü."
+    L["HELP_CMD_HELP"] = "  |cFFFFD100/rqol help|r — Zeigt diese Übersicht der Chat-Befehle an."
+    L["HELP_CMD_RESET"] = "  |cFFFFD100/rqol reset|r — |cFFFF2222Löscht die Datenbank dieses Charakters und lädt die Werkseinstellungen.|r"
+    L["CHAT_RESET_SUCCESS"] = "|cFF00C0FF[RankoneQoL]|r |cFFFF2222Das Charakterprofil wurde auf die Werkseinstellungen zurückgesetzt! UI wird neu geladen...|r"
 end
 
 RankoneQoL_Locals = L

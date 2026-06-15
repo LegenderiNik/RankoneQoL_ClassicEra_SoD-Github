@@ -1,13 +1,13 @@
 -- ============================================================================
--- RankoneQoL - Interface Tab: Themes - TEIL 1 von 2 (Slider Controls - Fixed)
+-- RankoneQoL - Interface Tab: Themes - TEIL 1 von 2 (Bottom-Docking-Engine)
 -- ============================================================================
 
 local L = RankoneQoL_Locals
 local MainFrame = RankoneQoL_GetMainFrame()
 
--- 1. TAB & PANEL IM GEHÄUSE REGISTRIEREN 
--- FIX: Sitzt jetzt mathematisch perfekt aufgeteilt bündig unter Speedrun bei -105px!
-local themesTab = RankoneQoL_CreateVectorTab("THEMES", L["TAB_THEMES"], -105, false)
+-- 1. TAB & PANEL IM GEHÄUSE REGISTRIEREN
+-- FIX: Nutzt jetzt "true" (unten fixiert) und sitzt mathematisch exakt auf Position 80 über Options!
+local themesTab = RankoneQoL_CreateVectorTab("THEMES", L["TAB_THEMES"], 80, true)
 if themesTab then 
     themesTab:SetSize(130, 24) 
     if themesTab.glowBar then themesTab.glowBar:SetSize(2, 22) end 

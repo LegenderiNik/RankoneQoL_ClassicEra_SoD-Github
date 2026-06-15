@@ -19,5 +19,6 @@ Core\Tab_Options.lua
 Core\MinimapButton.lua
 Modules\Automation.lua
 Modules\Speedrun.lua
+Modules\FlightTimer.lua
 Modules\GlobalTooltipSkin.lua
 Core\RankoneQoL.lua

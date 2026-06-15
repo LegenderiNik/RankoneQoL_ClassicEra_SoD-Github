@@ -1,12 +1,13 @@
 -- ============================================================================
--- RankoneQoL - Interface Tab: Options & System Controls (Cleaned Profile Management)
+-- RankoneQoL - Interface Tab: Options & System Controls - TEIL 1 von 2
 -- ============================================================================
 
 local L = RankoneQoL_Locals
 local MainFrame = RankoneQoL_GetMainFrame()
 
 -- 1. TAB & PANEL IM GEHÄUSE REGISTRIEREN
-local optionsTab = RankoneQoL_CreateVectorTab("OPTIONS", L["TAB_OPTIONS"], 80, true)
+-- FIX: Sitzt jetzt auf der zweituntersten Position am Gehäuseboden (48px Abstand)
+local optionsTab = RankoneQoL_CreateVectorTab("OPTIONS", L["TAB_OPTIONS"], 48, true)
 if optionsTab then 
     optionsTab:SetSize(130, 24) 
     if optionsTab.glowBar then optionsTab.glowBar:SetSize(2, 22) end 
@@ -40,7 +41,7 @@ local function CreateSubCard(name, titleText, x, y, width, height)
 end
 
 -- ============================================================================
--- 3. KACHEL: PROFILE MANAGEMENT (Zurückgesetzt auf Position -45)
+-- 3. KACHEL: PROFILE MANAGEMENT (Bündig auf Position -45 verankert)
 -- ============================================================================
 local profileCard = CreateSubCard("ProfileManagement", "PROFILE MANAGEMENT", 165, -45, 420, 115)
 
@@ -63,6 +64,9 @@ end
 
 currentProfileLabel:SetText("|c" .. classColorHex .. currentKey .. "|r")
 RankoneQoL_RegisterFontString(currentProfileLabel)
+-- ============================================================================
+-- RankoneQoL - Interface Tab: Options & System Controls - TEIL 2 von 2
+-- ============================================================================
 
 -- B) PROFIL-KOPIERER DROPDOWN (Mit Duplikat-Filter)
 local profileLabel = profileCard:CreateFontString(nil, "ARTWORK", "GameFontNormalSmall")
@@ -180,10 +184,10 @@ profileDropBtn:SetScript("OnClick", function()
     if profileDropList:IsShown() then profileDropList:Hide() else profileScrollOffset = 0 profileDropList:Show() UpdateProfileDropdownItems() end
 end)
 
--- 4. SYSTEM BUTTONS (RELOAD UI UNTEN LINKS)
-local reloadBtn = CreateFrame("Button", "RankoneQoLReloadButton", MainFrame, "BackdropTemplate")
+-- 4. SYSTEM BUTTONS (RELOAD UI - Clever in die rechte Kante der Kachel integriert)
+local reloadBtn = CreateFrame("Button", "RankoneQoLReloadButton", profileCard, "BackdropTemplate")
 reloadBtn:SetSize(130, 24)
-reloadBtn:SetPoint("BOTTOMLEFT", MainFrame, "BOTTOMLEFT", 12, 16)
+reloadBtn:SetPoint("BOTTOMRIGHT", profileCard, "BOTTOMRIGHT", -14, 14)
 reloadBtn:SetBackdrop({bgFile = "Interface\\ChatFrame\\ChatFrameBackground", edgeFile = "Interface\\Buttons\\WHITE8X8", edgeSize = 1})
 reloadBtn:SetBackdropColor(0.14, 0.04, 0.04, 0.5)
 reloadBtn:SetBackdropBorderColor(0.22, 0.08, 0.08, 0.8)

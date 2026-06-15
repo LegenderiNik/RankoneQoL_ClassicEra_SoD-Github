@@ -1,5 +1,5 @@
 -- ============================================================================
--- RankoneQoL - Hauptinterface & Theme Engine Kernel - TEIL 1 von 3 (Dropdown Fix)
+-- RankoneQoL - Hauptinterface & Theme Engine Kernel - TEIL 1 von 3 (ESC Close Fix)
 -- ============================================================================
 
 local L = RankoneQoL_Locals
@@ -17,6 +17,9 @@ MainFrame:SetScript("OnDragStop", MainFrame.StopMovingOrSizing)
 MainFrame:Hide()
 
 function RankoneQoL_GetMainFrame() return MainFrame end
+
+-- FIX: Registriert das Menü im globalen Blizzard-Register für die ESC-Taste!
+tinsert(UISpecialFrames, "RankoneQoLMainFrame")
 
 -- 2. DYNAMISCHE STRUKTUR-TABELLEN FÜR DIE THEMING-ENGINE
 local Panels = {}
@@ -67,15 +70,13 @@ function RankoneQoL_UpdateMenuThemeLive()
     local slider2 = _G["RankoneQoLThemesTooltipScaleSlider"]
     if slider2 then local thumb = slider2:GetThumbTexture() if thumb then thumb:SetVertexColor(c.accentR, c.accentG, c.accentB, 1) end end
     
-    -- E) Dropdown-Pfeile anpassen (FIX: Färbt jetzt strikt NUR noch den kleinen Pfeil um!)
+    -- E) Dropdown-Pfeile anpassen
     local targetButtons = { _G["RankoneQoLDropButton"], _G["RankoneQoLThemeDropButton"], _G["RankoneQoLProfileDropButton"] }
     for _, btn in ipairs(targetButtons) do
         if btn then
-            -- Setzt den Hintergrund des Dropdowns permanent auf dein mattes Anthrazit zurück
             btn:SetBackdropColor(0.04, 0.04, 0.04, 0.9)
             btn:SetBackdropBorderColor(c.borderR, c.borderG, c.borderB, c.borderAlpha)
             
-            -- Durchsucht alle Texturen im Button und färbt nur das Pfeil-Symbol
             for _, reg in ipairs({btn:GetRegions()}) do
                 if reg:GetObjectType() == "Texture" then
                     local texturePath = reg:GetTexture()
@@ -99,8 +100,8 @@ MainFrame:SetBackdrop({
 })
 
 local addonLogo = MainFrame:CreateTexture(nil, "ARTWORK")
-addonLogo:SetSize(22, 22)
-addonLogo:SetPoint("TOPLEFT", MainFrame, "TOPLEFT", 14, -14)
+addonLogo:SetSize(30, 30)
+addonLogo:SetPoint("TOPLEFT", MainFrame, "TOPLEFT", 14, -10)
 addonLogo:SetTexture("Interface\\AddOns\\RankoneQoL\\logo")
 
 local titleText = MainFrame:CreateFontString(nil, "ARTWORK", "GameFontNormalSmall")
