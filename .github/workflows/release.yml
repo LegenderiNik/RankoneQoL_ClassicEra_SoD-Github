@@ -18,4 +18,4 @@ jobs:
       - name: Pack and Upload Addon
         uses: BigWigsMods/packager@v2
         with:
-          args: -c ${{ secrets.CF_API_KEY }} -p 1575293
+          args: -c ${{ secrets.CF_API_KEY }} -p 1575293 -n "RankoneQoL ClassicEra_SoD"
