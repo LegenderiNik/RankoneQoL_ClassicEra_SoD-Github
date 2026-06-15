@@ -2,7 +2,7 @@
 ## Title: RankoneQoL
 ## Notes: Bequeme Quality-of-Life Funktionen für Classic.
 ## Author: Legenderi_Nik
-## Version: 1.1.0
+## Version: 2.0.1
 ## X-Curse-Project-ID: 1575293
 ## SavedVariables: RankoneQoL_DB
 ## IconTexture: Interface\AddOns\RankoneQoL\logo
